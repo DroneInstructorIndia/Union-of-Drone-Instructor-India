@@ -1,6 +1,6 @@
 # Highlighted List of DGCA Certified Drone Instructors 🛩️
 
-List of DGCA certified drone instructors in India. If you’d like to be added, please follow the joining instructions in our README! [here](Readme.md)
+List of DGCA certified drone instructors in India. If you’d like to be added, please follow the joining instructions in our README! [here](README.md)
 
 ## Definitions
 **Small = Means Small Class Drone Instructor**  
