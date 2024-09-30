@@ -25,7 +25,7 @@ Feel free to contribute any resources you have!
 
 We maintain a list of certified drone instructors. If you would like to be added, please follow the joining instructions below!
 
-For a complete list of instructors who have joined the group, please click [here](Names.md).
+For a complete list of instructors who have joined the group, please click [here](Instructors.md).
 
 | **Instructor Name**  | **Certification**         | **Location**       |
 |----------------------|---------------------------|--------------------|
