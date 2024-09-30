@@ -19,7 +19,7 @@ List of DGCA certified drone instructors in India. If you’d like to be added, 
 
 ### **Instructors Table**
 
-| **#** | **Instructor Name**          | **Classification of UAS** | **Serial Number as PER DSP List**   |
+| **#** | **Instructor Name**          | **Classification of UAS** | **Serial Number as Per DSP List**   |
 |-------|------------------------------|---------------------------|--------------------------------------|
 | 1     | **Abhishek Pal**             | Small & Medium            | 550                                  |
 | 2     | **Ajith C Babu**             | Small                     | 905                                  |
