@@ -1,20 +1,13 @@
-# Highlighted List of Drone Instructors 🚁
+# Highlighted List of DGCA Certified Drone Instructors 🚁
+List of DGCA certified drone instructors in India. If you’d like to be added, please follow the joining instructions in our README!
+## Definations
+**Small = Means Small Class Drone Instructor**
 
-Here’s a list of certified drone instructors in India. If you’d like to be added, please follow the joining instructions in our README!
-
-## 🏆 Featured Instructors
-
-1. **Rajendra Kumar Dangi** (Small)
-2. **Nishit Kumar** (Small)
-3. **John Doe** (Medium)
-4. **Jane Smith** (Medium)
-5. **Ravi Kumar** (Large)
-6. **Aisha Patel** (Large)
-7. **Vikram Singh** (Medium)
+**Medium = Means Medium Class Drone Instructor**
 
 ## 📋 All Instructors
 
-1. **Ajay Verma** (Small)
+1. **Abhishek Pal** (Small & Medium)
 2. **Sneha Mehta** (Small)
 3. **Rahul Desai** (Medium)
 4. **Pooja Reddy** (Large)
