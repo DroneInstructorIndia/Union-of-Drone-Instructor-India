@@ -103,7 +103,6 @@
       font-size: 0.9em;
     }
     footer .last-updated {
-      text-align: right;
       position: absolute;
       right: 20px;
       bottom: 20px;
@@ -128,6 +127,22 @@
       }
       .updates h2, .resources h2 {
         font-size: 1.4em;
+      }
+      /* Stack footer elements on mobile */
+      footer {
+        padding: 20px;
+        position: relative;
+      }
+      footer p {
+        margin: 5px 0;
+        font-size: 0.9em;
+        text-align: center;
+      }
+      footer .last-updated {
+        position: static;
+        margin-top: 10px;
+        text-align: center;
+        color: #ccc;
       }
     }
 
