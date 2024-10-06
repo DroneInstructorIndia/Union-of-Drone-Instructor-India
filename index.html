@@ -3,69 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
+  <meta name="description" content="Landing page for a marketing website with a focus on user engagement.">
+  <title>Marketing Website</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
       background-color: #f4f4f4;
-      text-align: center;
-      padding: 50px;
     }
-    .login-box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      margin: auto;
-    }
-    .login-box h1 {
-      margin-bottom: 20px;
-    }
-    .login-box input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .login-box button {
-      padding: 10px 20px;
-      background-color: #007BFF;
-      border: none;
+    header {
+      background-color: #007bff;
       color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: 2px solid white;
       border-radius: 5px;
+    }
+    header a:hover {
+      background-color: white;
+      color: #007bff;
+    }
+    .hero {
+      background-color: #e3f2fd;
+      padding: 100px 50px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    .hero p {
+      font-size: 1.2em;
+      color: #555;
+      margin: 20px 0;
+    }
+    .hero button {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
       cursor: pointer;
     }
-    .login-box button:hover {
+    .hero button:hover {
       background-color: #0056b3;
+    }
+    .features {
+      padding: 50px;
+      display: flex;
+      justify-content: space-around;
+      background-color: #fff;
+    }
+    .feature-box {
+      background: #f8f9fa;
+      padding: 20px;
+      width: 30%;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .feature-box h3 {
+      margin-bottom: 15px;
+    }
+    .testimonials {
+      padding: 50px;
+      background-color: #e9ecef;
+      text-align: center;
+    }
+    .testimonial-box {
+      background: #fff;
+      padding: 30px;
+      display: inline-block;
+      width: 30%;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .cta {
+      padding: 50px;
+      background-color: #007bff;
+      text-align: center;
+      color: white;
+    }
+    .cta h2 {
+      margin-bottom: 20px;
+    }
+    .cta button {
+      background-color: white;
+      color: #007bff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .cta button:hover {
+      background-color: #f8f9fa;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 50px;
+      text-align: center;
+    }
+    footer p {
+      margin: 0;
     }
   </style>
 </head>
 <body>
 
-  <div class="login-box">
-    <h1>Login</h1>
-    <input type="text" id="username" placeholder="Enter Username" required>
-    <input type="password" id="password" placeholder="Enter Password" required>
-    <button onclick="login()">Login</button>
-  </div>
+  <!-- Header Section -->
+  <header>
+    <h1>Marketing Website</h1>
+    <a href="login.html">User Login</a>
+  </header>
 
-  <script>
-    // Simple client-side login simulation
-    function login() {
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Grow Your Business</h1>
+    <p>Discover the tools and strategies to take your business to the next level.</p>
+    <button onclick="window.location.href='signup.html'">Get Started Now</button>
+  </section>
 
-      // Basic validation (this is just for demo purposes)
-      if (username === "user" && password === "password") {
-        localStorage.setItem("loggedIn", "true");
-        window.location.href = "docs.html";
-      } else {
-        alert("Invalid login credentials!");
-      }
-    }
-  </script>
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature-box">
+      <h3>Feature One</h3>
+      <p>Our tool helps you automate marketing tasks, so you can focus on what matters.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Feature Two</h3>
+      <p>Boost engagement and increase conversion rates with our data-driven strategies.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Feature Three</h3>
+      <p>Get insightful analytics and track your progress with real-time reports.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-box">
+      <p>"This platform revolutionized how we handle marketing. Our conversion rate doubled!"</p>
+      <p>- John D., CEO of XYZ Corp</p>
+    </div>
+    <div class="testimonial-box">
+      <p>"The best marketing tools we've ever used. Highly recommended!"</p>
+      <p>- Sarah L., Founder of ABC Startup</p>
+    </div>
+    <div class="testimonial-box">
+      <p>"Incredible results, great support, and easy to use. We are very happy."</p>
+      <p>- Michael P., Marketing Director</p>
+    </div>
+  </section>
+
+  <!-- Call-to-Action Section -->
+  <section class="cta">
+    <h2>Ready to Transform Your Business?</h2>
+    <button onclick="window.location.href='signup.html'">Join Now</button>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Marketing Website. All Rights Reserved.</p>
+    <p>Follow us on <a href="#" style="color:white;">Twitter</a>, <a href="#" style="color:white;">Facebook</a>, <a href="#" style="color:white;">LinkedIn</a></p>
+  </footer>
 
 </body>
 </html>
