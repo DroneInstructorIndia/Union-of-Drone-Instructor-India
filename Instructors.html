@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="List of Drone Instructors - Union of Drone Instructor India">
+  <title>Instructors List - Union of Drone Instructor India</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 1100px;
+      margin: 20px auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      color: #007bff;
+    }
+
+    /* Table Styling */
+    .instructors-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .instructors-table th, .instructors-table td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+      font-size: 1em;
+    }
+
+    .instructors-table th {
+      background-color: #007bff;
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    .instructors-table tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .instructors-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Sheet-like styling */
+    .instructors-table td {
+      background-color: #fff;
+    }
+
+    /* Abbreviation Section */
+    .abbreviations {
+      margin-bottom: 20px;
+      font-size: 1.1em;
+      text-align: center;
+    }
+
+    .abbreviations p {
+      margin: 5px 0;
+      font-size: 1em;
+      color: #333;
+    }
+
+    /* Search Bar */
+    .search-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .search-container input {
+      padding: 10px;
+      font-size: 1em;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-container input:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #e9ecef;
+      border-radius: 5px;
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9em;
+    }
+
+    /* Mobile Responsive */
+    @media only screen and (max-width: 768px) {
+      section {
+        margin: 10px;
+        padding: 10px;
+      }
+
+      .search-container {
+        justify-content: center;
+        margin-bottom: 15px;
+      }
+
+      .instructors-table th, .instructors-table td {
+        font-size: 0.9em;
+        padding: 10px;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      section h2 {
+        font-size: 1.3em;
+      }
+
+      .instructors-table th, .instructors-table td {
+        font-size: 0.8em;
+        padding: 8px;
+      }
+
+      .search-container input {
+        width: 100%;
+      }
+    }
+  </style>
+  <script>
+    function searchInstructors() {
+      const input = document.getElementById("instructorSearch").value.toUpperCase();
+      const table = document.getElementById("instructorsTable");
+      const tr = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < tr.length; i++) {
+        let tdName = tr[i].getElementsByTagName("td")[1];
+        if (tdName) {
+          let txtValue = tdName.textContent || tdName.innerText;
+          if (txtValue.toUpperCase().indexOf(input) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Union of Drone Instructor India</h1>
+  </header>
+
+  <!-- Instructor List Section -->
+  <section>
+    <h2>Instructors of Our Group Members</h2>
+
+    <!-- Abbreviations Section -->
+    <div class="abbreviations">
+      <p><strong>Small:</strong> Small Class Drone Instructor</p>
+      <p><strong>Medium:</strong> Medium Class Drone Instructor</p>
+      <p><strong>Large:</strong> Large Class Drone Instructor</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input type="text" id="instructorSearch" onkeyup="searchInstructors()" placeholder="Search Instructor by Name">
+    </div>
+
+    <!-- Instructor Table -->
+    <table class="instructors-table" id="instructorsTable">
+      <thead>
+        <tr>
+          <th>Serial No.</th>
+          <th>Name of Instructor</th>
+          <th>Class of Instructor</th>
+          <th>Serial Number (DSP List)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Abhishek Pal</td>
+          <td>Small & Medium</td>
+          <td>543</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>John Doe</td>
+          <td>Small</td>
+          <td>DSP-001</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Jane Smith</td>
+          <td>Medium</td>
+          <td>DSP-002</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>David Brown</td>
+          <td>Large</td>
+          <td>DSP-003</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Emily White</td>
+          <td>Small</td>
+          <td>DSP-004</td>
+        </tr>
+        <!-- Add more instructors here -->
+      </tbody>
+    </table>
+
+    <!-- Disclaimer Section -->
+    <div class="disclaimer">
+      <p>This is a list of instructors who have joined our WhatsApp Community Group. If you want to check the complete list of certified instructors, please visit the official Government of India Digital Sky platform.</p>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Union of Drone Instructor India. All Rights Reserved.</p>
+    <p>Free & Open Source Website</p>
+  </footer>
+
+</body>
+</html>
