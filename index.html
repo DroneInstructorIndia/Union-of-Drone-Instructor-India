@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Union of Drone Instructor India - Helping the Indian Drone Industry grow together.">
+  <meta name="description" content="Union of Drone Instructor India - Connecting DGCA certified drone instructors and offering resources.">
   <title>Union of Drone Instructor India</title>
   <style>
     body {
@@ -28,13 +28,14 @@
     }
     header nav {
       display: flex;
-      gap: 20px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
     header a {
       color: white;
       text-decoration: none;
       font-size: 16px;
-      padding: 10px 20px;
+      padding: 10px 15px;
       border: 2px solid white;
       border-radius: 5px;
     }
@@ -43,91 +44,101 @@
       color: #007bff;
     }
 
-    /* Sliding Updates Section */
+    /* Updates Section */
     .updates {
       background-color: #fff;
       padding: 20px;
-      margin: 20px 50px;
+      margin: 20px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
-      height: 50px;
     }
-    .update-content {
-      white-space: nowrap;
-      display: inline-block;
-      animation: slide 10s linear infinite;
+    .updates h2 {
+      text-align: center;
+      font-size: 1.6em;
+      margin-bottom: 15px;
     }
-    @keyframes slide {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    .update-content span {
-      margin-right: 50px;
-      font-size: 18px;
+    .update-item {
+      margin-bottom: 10px;
+      font-size: 1.1em;
       color: #007bff;
     }
 
-    /* Website Goals Section */
-    .goals {
-      padding: 50px;
-      text-align: center;
-      background-color: #e9ecef;
-      margin: 20px 0;
-    }
-    .goals h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-    .goals p {
-      font-size: 1.2em;
-      color: #555;
-    }
-
-    /* Big Join Us Section */
-    .join-us {
-      padding: 50px;
-      text-align: center;
-    }
-    .join-us button {
-      background-color: #007bff;
-      color: white;
-      padding: 20px 40px;
-      font-size: 1.5em;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    .join-us button:hover {
-      background-color: #0056b3;
-    }
-
-    /* Disclaimer Section */
-    .disclaimer {
-      background-color: #f8f9fa;
+    /* Resources Section */
+    .resources {
       padding: 30px;
       text-align: center;
-      font-size: 1em;
-      color: #333;
+      background-color: #e9ecef;
+      margin: 20px;
     }
-    .disclaimer p {
-      margin: 0;
+    .resources h2 {
+      font-size: 1.6em;
+      margin-bottom: 15px;
     }
-    .disclaimer strong {
-      color: #d9534f;
+    .resources ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .resources ul li {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+    .resources ul li a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .resources ul li a:hover {
+      text-decoration: underline;
     }
 
     /* Footer Section */
     footer {
       background-color: #343a40;
       color: white;
-      padding: 20px 50px;
+      padding: 20px;
       text-align: center;
     }
     footer p {
       margin: 5px 0;
       font-size: 0.9em;
+    }
+
+    /* Mobile Styles */
+    @media only screen and (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      header h1 {
+        font-size: 1.5em;
+      }
+      header nav {
+        justify-content: center;
+      }
+      .updates, .resources {
+        margin: 10px;
+      }
+      .updates h2, .resources h2 {
+        font-size: 1.4em;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      header h1 {
+        font-size: 1.2em;
+      }
+      header a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+      .updates, .resources {
+        padding: 15px;
+      }
+      .updates h2, .resources h2 {
+        font-size: 1.2em;
+      }
+      .update-item, .resources ul li {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
@@ -138,33 +149,30 @@
     <h1>Union of Drone Instructor India</h1>
     <nav>
       <a href="https://forms.gle/krcfesQbaAbamec89" target="_blank">Join Community</a>
-      <a href="#">DTC's</a>
+      <a href="#">DTC's PDFs</a>
+      <a href="#">Resources</a>
+      <a href="#">Updates</a>
+      <a href="#">About Us</a>
     </nav>
   </header>
 
-  <!-- Sliding Updates Section -->
-  <div class="updates">
-    <div class="update-content">
-      <span>DTC Updates: New training centers opening soon.</span>
-      <span>Group Member Updates: 50 new members joined this month.</span>
-      <span>Drone Regulations: New guidelines released by DGCA.</span>
-    </div>
-  </div>
-
-  <!-- Website Goals Section -->
-  <section class="goals">
-    <h2>Our Mission</h2>
-    <p>This is a Non-Profitable Website. We are here to help each other to grow the Indian Drone Industry by providing a platform for instructors to collaborate, share knowledge, and grow together.</p>
+  <!-- Updates Section -->
+  <section class="updates">
+    <h2>Latest News & Updates</h2>
+    <div class="update-item">DTC Updates: New training centers opening soon.</div>
+    <div class="update-item">Drone Regulations: New guidelines released by DGCA.</div>
+    <div class="update-item">New Members: 50 new instructors joined this month.</div>
   </section>
 
-  <!-- Big Join Us Section -->
-  <section class="join-us">
-    <button onclick="window.location.href='https://forms.gle/krcfesQbaAbamec89'">Join Us Now</button>
-  </section>
-
-  <!-- Disclaimer Section -->
-  <section class="disclaimer">
-    <p><strong>Disclaimer:</strong> This is <strong>not</strong> a government website. This website is for helping each other without charging any money or expenses. Our mission is to grow the Indian drone industry and support each other.</p>
+  <!-- Resources Section -->
+  <section class="resources">
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="DTC_PDFs/DTC_Guidelines.pdf" target="_blank">DTC Guidelines PDF</a></li>
+      <li><a href="Books/Drone_Piloting_Guide.pdf" target="_blank">Drone Piloting Guide</a></li>
+      <li><a href="Books/Drone_Safety_Protocols.pdf" target="_blank">Drone Safety Protocols</a></li>
+      <li><a href="Books/DGCA_Examination_Prep.pdf" target="_blank">DGCA Examination Prep Materials</a></li>
+    </ul>
   </section>
 
   <!-- Footer Section -->
