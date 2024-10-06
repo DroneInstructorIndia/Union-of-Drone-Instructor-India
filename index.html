@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Landing page for a marketing website with a focus on user engagement.">
-  <title>Marketing Website</title>
+  <meta name="description" content="Union of Drone Instructor India - Helping the Indian Drone Industry grow together.">
+  <title>Union of Drone Instructor India</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -12,16 +12,23 @@
       padding: 0;
       background-color: #f4f4f4;
     }
+
+    /* Header Section */
     header {
       background-color: #007bff;
       color: white;
-      padding: 20px 50px;
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     header h1 {
+      font-size: 1.8em;
       margin: 0;
+    }
+    header nav {
+      display: flex;
+      gap: 20px;
     }
     header a {
       color: white;
@@ -35,84 +42,83 @@
       background-color: white;
       color: #007bff;
     }
-    .hero {
-      background-color: #e3f2fd;
-      padding: 100px 50px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3em;
-      margin: 0;
-    }
-    .hero p {
-      font-size: 1.2em;
-      color: #555;
-      margin: 20px 0;
-    }
-    .hero button {
-      background-color: #007bff;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 5px;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    .hero button:hover {
-      background-color: #0056b3;
-    }
-    .features {
-      padding: 50px;
-      display: flex;
-      justify-content: space-around;
+
+    /* Sliding Updates Section */
+    .updates {
       background-color: #fff;
-    }
-    .feature-box {
-      background: #f8f9fa;
       padding: 20px;
-      width: 30%;
-      text-align: center;
+      margin: 20px 50px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      height: 50px;
     }
-    .feature-box h3 {
-      margin-bottom: 15px;
-    }
-    .testimonials {
-      padding: 50px;
-      background-color: #e9ecef;
-      text-align: center;
-    }
-    .testimonial-box {
-      background: #fff;
-      padding: 30px;
+    .update-content {
+      white-space: nowrap;
       display: inline-block;
-      width: 30%;
-      margin: 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: slide 10s linear infinite;
     }
-    .cta {
+    @keyframes slide {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .update-content span {
+      margin-right: 50px;
+      font-size: 18px;
+      color: #007bff;
+    }
+
+    /* Website Goals Section */
+    .goals {
       padding: 50px;
-      background-color: #007bff;
       text-align: center;
-      color: white;
+      background-color: #e9ecef;
+      margin: 20px 0;
     }
-    .cta h2 {
+    .goals h2 {
+      font-size: 2em;
       margin-bottom: 20px;
     }
-    .cta button {
-      background-color: white;
-      color: #007bff;
-      padding: 15px 30px;
+    .goals p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    /* Big Join Us Section */
+    .join-us {
+      padding: 50px;
+      text-align: center;
+    }
+    .join-us button {
+      background-color: #007bff;
+      color: white;
+      padding: 20px 40px;
+      font-size: 1.5em;
       border: none;
-      border-radius: 5px;
-      font-size: 18px;
+      border-radius: 10px;
       cursor: pointer;
     }
-    .cta button:hover {
-      background-color: #f8f9fa;
+    .join-us button:hover {
+      background-color: #0056b3;
     }
+
+    /* Disclaimer Section */
+    .disclaimer {
+      background-color: #f8f9fa;
+      padding: 30px;
+      text-align: center;
+      font-size: 1em;
+      color: #333;
+    }
+    .disclaimer p {
+      margin: 0;
+    }
+    .disclaimer strong {
+      color: #d9534f;
+    }
+
+    /* Footer Section */
     footer {
       background-color: #343a40;
       color: white;
@@ -120,7 +126,8 @@
       text-align: center;
     }
     footer p {
-      margin: 0;
+      margin: 5px 0;
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -128,60 +135,42 @@
 
   <!-- Header Section -->
   <header>
-    <h1>Marketing Website</h1>
-    <a href="login.html">User Login</a>
+    <h1>Union of Drone Instructor India</h1>
+    <nav>
+      <a href="https://forms.gle/krcfesQbaAbamec89" target="_blank">Join Community</a>
+      <a href="#">DTC's</a>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Grow Your Business</h1>
-    <p>Discover the tools and strategies to take your business to the next level.</p>
-    <button onclick="window.location.href='signup.html'">Get Started Now</button>
+  <!-- Sliding Updates Section -->
+  <div class="updates">
+    <div class="update-content">
+      <span>DTC Updates: New training centers opening soon.</span>
+      <span>Group Member Updates: 50 new members joined this month.</span>
+      <span>Drone Regulations: New guidelines released by DGCA.</span>
+    </div>
+  </div>
+
+  <!-- Website Goals Section -->
+  <section class="goals">
+    <h2>Our Mission</h2>
+    <p>This is a Non-Profitable Website. We are here to help each other to grow the Indian Drone Industry by providing a platform for instructors to collaborate, share knowledge, and grow together.</p>
   </section>
 
-  <!-- Features Section -->
-  <section class="features">
-    <div class="feature-box">
-      <h3>Feature One</h3>
-      <p>Our tool helps you automate marketing tasks, so you can focus on what matters.</p>
-    </div>
-    <div class="feature-box">
-      <h3>Feature Two</h3>
-      <p>Boost engagement and increase conversion rates with our data-driven strategies.</p>
-    </div>
-    <div class="feature-box">
-      <h3>Feature Three</h3>
-      <p>Get insightful analytics and track your progress with real-time reports.</p>
-    </div>
+  <!-- Big Join Us Section -->
+  <section class="join-us">
+    <button onclick="window.location.href='https://forms.gle/krcfesQbaAbamec89'">Join Us Now</button>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial-box">
-      <p>"This platform revolutionized how we handle marketing. Our conversion rate doubled!"</p>
-      <p>- John D., CEO of XYZ Corp</p>
-    </div>
-    <div class="testimonial-box">
-      <p>"The best marketing tools we've ever used. Highly recommended!"</p>
-      <p>- Sarah L., Founder of ABC Startup</p>
-    </div>
-    <div class="testimonial-box">
-      <p>"Incredible results, great support, and easy to use. We are very happy."</p>
-      <p>- Michael P., Marketing Director</p>
-    </div>
-  </section>
-
-  <!-- Call-to-Action Section -->
-  <section class="cta">
-    <h2>Ready to Transform Your Business?</h2>
-    <button onclick="window.location.href='signup.html'">Join Now</button>
+  <!-- Disclaimer Section -->
+  <section class="disclaimer">
+    <p><strong>Disclaimer:</strong> This is <strong>not</strong> a government website. This website is for helping each other without charging any money or expenses. Our mission is to grow the Indian drone industry and support each other.</p>
   </section>
 
   <!-- Footer Section -->
   <footer>
-    <p>&copy; 2024 Marketing Website. All Rights Reserved.</p>
-    <p>Follow us on <a href="#" style="color:white;">Twitter</a>, <a href="#" style="color:white;">Facebook</a>, <a href="#" style="color:white;">LinkedIn</a></p>
+    <p>&copy; 2024 Union of Drone Instructor India. All Rights Reserved.</p>
+    <p>Free & Open Source Website</p>
   </footer>
 
 </body>
