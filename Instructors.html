@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="List of Drone Instructors - Union of Drone Instructor India">
   <title>Instructors List - Union of Drone Instructor India</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script> <!-- Load SheetJS -->
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -169,25 +170,6 @@
       }
     }
   </style>
-  <script>
-    function searchInstructors() {
-      const input = document.getElementById("instructorSearch").value.toUpperCase();
-      const table = document.getElementById("instructorsTable");
-      const tr = table.getElementsByTagName("tr");
-
-      for (let i = 1; i < tr.length; i++) {
-        let tdName = tr[i].getElementsByTagName("td")[1];
-        if (tdName) {
-          let txtValue = tdName.textContent || tdName.innerText;
-          if (txtValue.toUpperCase().indexOf(input) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }
-      }
-    }
-  </script>
 </head>
 <body>
 
@@ -199,17 +181,24 @@
   <!-- Instructor List Section -->
   <section>
     <h2>Instructors of Our Group Members</h2>
-
-    <!-- Abbreviations Section -->
-    <div class="abbreviations">
+     <!-- Abbreviations Section -->
+      
+     <div class="abbreviations">
       <p><strong>Small:</strong> Small Class Drone Instructor</p>
       <p><strong>Medium:</strong> Medium Class Drone Instructor</p>
       <p><strong>Large:</strong> Large Class Drone Instructor</p>
     </div>
 
+
     <!-- Search Bar -->
     <div class="search-container">
       <input type="text" id="instructorSearch" onkeyup="searchInstructors()" placeholder="Search Instructor by Name">
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner">
+      <div class="spinner"></div>
+      <p>Loading data, please wait...</p>
     </div>
 
     <!-- Instructor Table -->
@@ -223,43 +212,7 @@
         </tr>
       </thead>
       <tbody>
-         <tr>
-            <td>1</td>
-            <td>Rajendra Kumar Dangi</td>
-            <td>Small</td>
-            <td>974</td>
-          </tr>
-        <tr>
-          <td>2</td>
-          <td>Abhishek Pal</td>
-          <td>Small & Medium</td>
-          <td>550</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Nishit Kumar</td>
-          <td>Small</td>
-          <td>683</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>PATIL AVISHKAR SANTOSH</td>
-          <td>Small</td>
-          <td>675</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>AJITH C BABU </td>
-          <td>Small</td>
-          <td>905</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>JASWANT KUMAR A</td>
-          <td>Small</td>
-          <td>939.</td>
-        </tr>
-        <!-- Add more instructors here -->
+        <!-- Data will be populated here -->
       </tbody>
     </table>
 
@@ -268,6 +221,90 @@
       <p>This is a list of instructors who have joined our WhatsApp Community Group. If you want to check the complete list of certified instructors, please visit the official Government of India Digital Sky platform.</p>
     </div>
   </section>
+
+  <script>
+    // Function to fetch and parse CSV data
+    async function fetchCSVData(url) {
+      try {
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.text();
+        return parseCSV(data);
+      } catch (error) {
+        console.error("Error fetching or parsing CSV data: ", error);
+        return [];
+      }
+    }
+
+    // Function to parse CSV data
+    function parseCSV(data) {
+      const rows = data.split("\n").filter(row => row.trim() !== '');
+      const headers = rows[0].split(","); // Assuming the first row contains the headers
+      const instructors = rows.slice(1).map(row => {
+        const values = row.split(",");
+        const instructor = {};
+        headers.forEach((header, index) => {
+          instructor[header.trim()] = values[index] ? values[index].trim() : '';
+        });
+        return instructor;
+      });
+      return instructors;
+    }
+
+    // Function to populate the table with instructor data
+    function populateTable(instructors) {
+      const tableBody = document.getElementById('instructorsTable').getElementsByTagName('tbody')[0];
+      tableBody.innerHTML = ""; // Clear existing rows
+
+      instructors.forEach((instructor, index) => {
+        const newRow = tableBody.insertRow();
+        newRow.insertCell().textContent = index + 1; // Serial number generated dynamically
+        newRow.insertCell().textContent = instructor['Name of Instructor'] || ''; // Match column headers from CSV
+        newRow.insertCell().textContent = instructor['Class of Instructor'] || '';
+        newRow.insertCell().textContent = instructor['Serial Number (DSP List)'] || '';
+      });
+    }
+
+    // Search function to filter instructors by name
+    function searchInstructors() {
+      const input = document.getElementById("instructorSearch").value.toUpperCase();
+      const table = document.getElementById("instructorsTable");
+      const tr = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < tr.length; i++) {
+        let tdName = tr[i].getElementsByTagName("td")[1];
+        if (tdName) {
+          let txtValue = tdName.textContent || tdName.innerText;
+          tr[i].style.display = txtValue.toUpperCase().indexOf(input) > -1 ? "" : "none";
+        }
+      }
+    }
+
+    // Fetch and populate data on page load
+    window.onload = async () => {
+      const url = 'https://raw.githubusercontent.com/rajendrarox/Union-of-Drone-Instructor-India/main/Resources/Sheets/InstructorsList.csv'; // Ensure this is the correct raw URL
+      const spinner = document.getElementById('loadingSpinner');
+
+      // Show the loading spinner
+      spinner.style.display = 'block';
+
+      // Fetch the CSV data
+      const instructors = await fetchCSVData(url);
+
+      // Hide the spinner once the data is loaded
+      spinner.style.display = 'none';
+
+      if (instructors.length > 0) {
+        populateTable(instructors);
+      } else {
+        console.error("No instructors found in the data.");
+      }
+    };
+  </script>
 
   <!-- Footer Section -->
   <footer>
