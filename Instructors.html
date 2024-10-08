@@ -127,7 +127,7 @@
 
     // Fetch and populate data on page load
     window.onload = async () => {
-      const url = 'https://github.com/androidbulb/Union-of-Drone-Instructor-India/blob/main/Resources/Sheets/InstructorsList.xlsx'; // Replace with your raw GitHub URL
+      const url = 'https://github.com/androidbulb/Union-of-Drone-Instructor-India/blob/main/Resources/Sheets/InstructorsList.csv'; // Replace with your raw GitHub URL
       const instructors = await fetchExcelData(url);
       populateTable(instructors);
     };
